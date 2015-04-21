@@ -2,7 +2,6 @@
 #蜂鸟计费开发指南
 
 
-##第一步：SDK一键支付接口
 ###1.接口说明
 **FNPayManager**
 FNPayManager对象是SDK提供开发者初始化配置参数、发起订购的接口。
@@ -25,28 +24,40 @@ appKey|是|蜂鸟计费平台分配给游戏应用的接入秘钥，不能对外
 **CreateOrder接口**
 CreateOrder（）：SDK订购接口
 
-FNPay.CreateOrder（sum,alias,FNlistener）
+FNPay.CreateOrder（context,appid,appKey,sum,subject,body,alias,listener）
     
 参数|必须|说明
----|-------|----  
+---|-------|----
+appId|是|蜂鸟计费平台分配给游戏应用的应用标识
+appKey|是|蜂鸟计费平台分配给游戏应用的接入秘钥，不能对外公开    
 sum |是|交易金额，分为单位，最大到千元，即长度为6位(1-100000分)
+subject |是|商品标题
+body |是|商品详情
 alias|是|开发者自定义串 ,可以是渠道标识，长度不能超过为100个字符(只能是字符或数字)
-FNlistener|是|回调接口,通过此接口通知开发者支付状态
+listener|是|回调接口,通过此接口通知开发者支付状态
 
 **FNPayListener接口**
 FNPayListener（returnCode, returnObject）：SDK订购结果监听器，开发者可以通过该接口监听业务操作的状态：
 returnCode: 
 // 计费成功: 0;
-// 计费失败: 1;
+// 计费失败: 10001|订单处理中，请稍后购买;10002|计费未初始化错误;10003|请检查网络状态;
 
+**onDestroy接口**
+onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
 
-###2.导入蜂鸟计费SDK到开发工程
+###2.导入蜂鸟计费SDK到开发工程|还有所需JAR包
 
 导入蜂鸟计费SDK开发包（以下简称SDK）到你开发的应用程序项目
 
-1）fnPaySDK 是一个Library,你需要把你的fnPaySDK引入到工作空间中
+1）将fn.paysdk.1.0.0.jar文件拷贝到应用工程的libs目录下，如没有该目录，可新建；
 
-2）把该library与你自己的项目关联(eclispe工具关联步骤,在你自己的工程右键->propreties->android->add...->选择fnPaySDK->ok->ok)做完这两部操作你就可以进行fnPaySDK开发了
+2）将蜂鸟计费SDK支持的MM、支付宝SDKjar文件拷贝到应用工程的libs目录下：
+	mmbilling.3.1.2.jar
+	alipaysdk.jar
+	alipaysecsdk.jar
+	alipayutdid.jar
+3)将libidentifyApp.so,libcasdkjni.so,libcmcc_haze.so和libcmcc_rusteze.so
+	复制到libs\armeabi目录下
 
 
 ###3.配置AndroidManifest.xml
@@ -92,7 +103,7 @@ returnCode:
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:priority="312" >
-                <action android:name="com.fn.paysdk.purchaseservice.BIND" />
+                <action android:name="你的包名.purchaseservice.BIND" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
@@ -110,7 +121,7 @@ returnCode:
             android:configChanges="orientation|keyboardHidden"
             android:theme="@android:style/Theme.Translucent">
             <intent-filter android:priority="312" >
-                <action android:name="com.fn.paysdk.com.mmiap.activity" />
+                <action android:name="你的包名.com.mmiap.activity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -170,6 +181,22 @@ returnCode:
        	<!-- android:process="safiap.framework.safframeworkmanager" end -->
 	</application>
     </manifest>
+1）AndroidManifest 设置（开发者必须要注意的地方）
+	在上述声明中，需要注意声明BillingLayoutActivity中的Action
+	<activity            android:name="mm.purchasesdk.iapservice.BillingLayoutActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.Translucent">
+	<intent-filter android:priority="313" >
+	<action android:name="你程序的包名.com.mmiap.activity" />
+	<category android:name="android.intent.category.DEFAULT" />
+	</intent-filter>
+	</activity>
+	请将action声明为您程序的包名.com.mmiap.activity
+	在上述声明中，需要注意声明PurchaseService中的Action
+	<intent-filter android:priority="313" >
+       <action android:name="你程序的包名.purchaseservice.BIND" />
+       <category android:name="android.intent.category.DEFAULT" />
+	</intent-filter>
 
 
 ##第二步：服务端计费成功通知接口
