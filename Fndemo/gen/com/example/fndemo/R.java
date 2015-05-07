@@ -17,28 +17,200 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int bd_wallet_action_bar_back_pressed=0x7f020000;
+        public static final int bird=0x7f020001;
+        public static final int ebpay_indicator_arrow=0x7f020002;
+        public static final int gc_anim_title=0x7f020003;
+        public static final int gc_arrow_big=0x7f020004;
+        public static final int gc_arrow_little=0x7f020005;
+        public static final int gc_arrow_text=0x7f020006;
+        public static final int gc_center_about=0x7f020007;
+        public static final int gc_center_edit=0x7f020008;
+        public static final int gc_center_gameshare=0x7f020009;
+        public static final int gc_center_help=0x7f02000a;
+        public static final int gc_center_look=0x7f02000b;
+        public static final int gc_center_online_service=0x7f02000c;
+        public static final int gc_center_recharge=0x7f02000d;
+        public static final int gc_center_safely=0x7f02000e;
+        public static final int gc_center_save=0x7f02000f;
+        public static final int gc_center_transaction_details=0x7f020010;
+        public static final int gc_contract_press=0x7f020011;
+        public static final int gc_default_icon=0x7f020012;
+        public static final int gc_drag_hide=0x7f020013;
+        public static final int gc_edit_del=0x7f020014;
+        public static final int gc_exit_share=0x7f020015;
+        public static final int gc_game_service_tel=0x7f020016;
+        public static final int gc_gamehall=0x7f020017;
+        public static final int gc_icon_extend=0x7f020018;
+        public static final int gc_icon_shrink=0x7f020019;
+        public static final int gc_member_green=0x7f02001a;
+        public static final int gc_member_yellow=0x7f02001b;
+        public static final int gc_more_game=0x7f02001c;
+        public static final int gc_notification_icon=0x7f02001d;
+        public static final int gc_online_service_logo=0x7f02001e;
+        public static final int gc_piccode=0x7f02001f;
+        public static final int gc_piccode_refresh=0x7f020020;
+        public static final int gc_recharge_sale=0x7f020021;
+        public static final int gc_recommend_flow_two=0x7f020022;
+        public static final int gc_recommend_hall=0x7f020023;
+        public static final int gc_share_qq=0x7f020024;
+        public static final int gc_share_sina=0x7f020025;
+        public static final int gc_share_sms=0x7f020026;
+        public static final int gc_share_weixin_timeline=0x7f020027;
+        public static final int gc_share_weixinfriend=0x7f020028;
+        public static final int gc_sound_off=0x7f020029;
+        public static final int gc_sound_on=0x7f02002a;
+        public static final int gc_start_cmcc=0x7f02002b;
+        public static final int gc_start_game=0x7f02002c;
+        public static final int gc_start_login=0x7f02002d;
+        public static final int gc_start_logo=0x7f02002e;
+        public static final int gc_step_focused=0x7f02002f;
+        public static final int gc_step_unfocus=0x7f020030;
+        public static final int gc_title_arrow=0x7f020031;
+        public static final int gc_title_exit=0x7f020032;
+        public static final int gc_title_logo=0x7f020033;
+        public static final int gc_user_center=0x7f020034;
+        public static final int gc_window=0x7f020035;
+        public static final int ic_launcher=0x7f020036;
+        public static final int unicom_back_button=0x7f020037;
+        public static final int unicom_banner=0x7f020038;
+        public static final int unicom_error=0x7f020039;
+        public static final int unicom_icon=0x7f02003a;
+        public static final int unicom_line=0x7f02003b;
+        public static final int unicom_ltlogo_b=0x7f02003c;
+        public static final int unicom_ltlogo_w=0x7f02003d;
+        public static final int unicom_money_icon=0x7f02003e;
+        public static final int unicom_payment_button=0x7f02003f;
+        public static final int unicom_phone_icon=0x7f020040;
+        public static final int unicom_profile=0x7f020041;
+        public static final int unicom_shape=0x7f020042;
+        public static final int unicom_shape_bottom=0x7f020043;
+        public static final int unicom_shape_center=0x7f020044;
+        public static final int unicom_shape_top=0x7f020045;
+        public static final int unicom_success=0x7f020046;
+        public static final int unicomselect=0x7f020047;
     }
     public static final class id {
-        public static final int action_settings=0x7f080003;
-        public static final int button1=0x7f080001;
-        public static final int button2=0x7f080000;
-        public static final int textView1=0x7f080002;
+        public static final int action_settings=0x7f090010;
+        public static final int button1=0x7f090001;
+        public static final int button10=0x7f090009;
+        public static final int button11=0x7f09000b;
+        public static final int button12=0x7f09000c;
+        public static final int button13=0x7f09000d;
+        public static final int button14=0x7f09000e;
+        public static final int button15=0x7f09000f;
+        public static final int button2=0x7f090002;
+        public static final int button3=0x7f090003;
+        public static final int button4=0x7f090004;
+        public static final int button5=0x7f090005;
+        public static final int button6=0x7f090006;
+        public static final int button7=0x7f090007;
+        public static final int button8=0x7f090008;
+        public static final int button9=0x7f09000a;
+        public static final int textView1=0x7f090000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
+    }
+    public static final class raw {
+        public static final int opening_sound=0x7f040000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        /**  Class name of game entry 
+         */
+        public static final int app_name=0x7f060001;
+        /**  Class name of game entry 
+         */
+        public static final int g_class_name=0x7f060000;
+        public static final int unicom_again=0x7f060008;
+        public static final int unicom_authentication=0x7f06004f;
+        public static final int unicom_back=0x7f060006;
+        public static final int unicom_callss=0x7f060026;
+        public static final int unicom_cancel=0x7f060007;
+        public static final int unicom_check_device_net=0x7f06004e;
+        public static final int unicom_chinaunicom_payment_alert=0x7f06000b;
+        public static final int unicom_chinaunicon_copyright=0x7f06000c;
+        public static final int unicom_company_title=0x7f060013;
+        public static final int unicom_confirm=0x7f06000e;
+        public static final int unicom_confirm_char=0x7f060029;
+        public static final int unicom_confirm_purchase=0x7f06000a;
+        public static final int unicom_consumer_records_thirtydays=0x7f06004b;
+        public static final int unicom_deal_time=0x7f06004a;
+        public static final int unicom_dear_user=0x7f060044;
+        public static final int unicom_deduction_from_your_phonenum=0x7f060025;
+        public static final int unicom_developers_service_phonenum=0x7f06001a;
+        public static final int unicom_enter_phonenum_msg=0x7f060034;
+        public static final int unicom_enter_right_phonenumber=0x7f060035;
+        public static final int unicom_enter_right_verificationcode=0x7f060039;
+        public static final int unicom_enter_verificationcode_msg=0x7f060038;
+        public static final int unicom_enterverificationcodeerror_twice=0x7f060030;
+        public static final int unicom_exit_payment=0x7f060031;
+        public static final int unicom_firsttime_prompt=0x7f06003d;
+        public static final int unicom_gamename_title=0x7f060012;
+        public static final int unicom_getproductmessage=0x7f060040;
+        public static final int unicom_getproductmessage_faild=0x7f060041;
+        public static final int unicom_getrecordsconsumption_faild=0x7f060043;
+        public static final int unicom_goodcount_title=0x7f060016;
+        public static final int unicom_goodprice_title=0x7f060015;
+        public static final int unicom_mobile_calls_pay=0x7f060009;
+        public static final int unicom_morethen_300_thismonth=0x7f06001f;
+        public static final int unicom_morethen_maxmoney=0x7f060003;
+        public static final int unicom_netagain=0x7f060050;
+        public static final int unicom_no_payment_return=0x7f06002c;
+        public static final int unicom_nonet=0x7f06004d;
+        public static final int unicom_nopersional_exit=0x7f06003e;
+        public static final int unicom_norecordsconsumption=0x7f060042;
+        public static final int unicom_ordernum=0x7f060045;
+        public static final int unicom_out_of_money=0x7f06002a;
+        public static final int unicom_over_day_quota=0x7f060051;
+        public static final int unicom_over_month_quota=0x7f060052;
+        public static final int unicom_paidamount_title=0x7f060017;
+        public static final int unicom_parameter_wrong=0x7f060005;
+        public static final int unicom_pay_faild=0x7f060021;
+        public static final int unicom_pay_faild_prompt=0x7f060024;
+        public static final int unicom_pay_result=0x7f060049;
+        public static final int unicom_pay_success=0x7f060020;
+        public static final int unicom_pay_way=0x7f060048;
+        public static final int unicom_payagain=0x7f060010;
+        public static final int unicom_paymoney_wrong=0x7f060004;
+        public static final int unicom_please_enter_verificationcode=0x7f06001c;
+        public static final int unicom_please_enter_verificationcode_toast=0x7f06001d;
+        public static final int unicom_price=0x7f060047;
+        public static final int unicom_product=0x7f060046;
+        public static final int unicom_product_title=0x7f060014;
+        public static final int unicom_prompt=0x7f06000d;
+        public static final int unicom_searching_record=0x7f06004c;
+        public static final int unicom_send_sms_faild=0x7f060037;
+        public static final int unicom_send_sms_text_char=0x7f060032;
+        public static final int unicom_sendagain=0x7f06000f;
+        public static final int unicom_service_phonenum=0x7f060019;
+        public static final int unicom_sms_send_faild=0x7f06003b;
+        public static final int unicom_sms_sending=0x7f060033;
+        public static final int unicom_sms_timeout=0x7f060053;
+        public static final int unicom_sms_timeout_dialog_message=0x7f060023;
+        public static final int unicom_sms_timeout_prompt=0x7f060022;
+        public static final int unicom_userphone_title=0x7f060011;
+        public static final int unicom_verification_faild=0x7f06003a;
+        public static final int unicom_verification_success=0x7f06003f;
+        public static final int unicom_verificationcode=0x7f06001b;
+        public static final int unicom_verificationcode_wrong=0x7f06001e;
+        public static final int unicom_verificationsms_faild=0x7f06003c;
+        public static final int unicom_wait_verificationcode_sms=0x7f060036;
+        public static final int unicom_waiting_pay=0x7f060027;
+        public static final int unicom_waiting_title=0x7f060028;
+        public static final int unicom_wrong_channelid=0x7f060002;
+        public static final int unicom_wrong_getsim=0x7f06002f;
+        public static final int unicom_wrong_money=0x7f06002b;
+        public static final int unicom_wrong_payment_number=0x7f06002e;
+        public static final int unicom_wrong_payment_return=0x7f06002d;
+        public static final int unicom_yuan=0x7f060018;
     }
     public static final class style {
         /** 
@@ -62,10 +234,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }

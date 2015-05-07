@@ -49,15 +49,7 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
 
 导入蜂鸟计费SDK开发包（以下简称SDK）到你开发的应用程序项目
 
-1）将fn.paysdk.1.0.0.jar文件拷贝到应用工程的libs目录下，如没有该目录，可新建；
-
-2）将蜂鸟计费SDK支持的MM、支付宝SDKjar文件拷贝到应用工程的libs目录下：
-	mmbilling.3.1.2.jar
-	alipaysdk.jar
-	alipaysecsdk.jar
-	alipayutdid.jar
-3)将libidentifyApp.so,libcasdkjni.so,libcmcc_haze.so和libcmcc_rusteze.so
-	复制到libs\armeabi目录下
+请把demo工程里的libs目录下的文件复制到你开发的工程目录里的libs目录
 
 
 ###3.配置AndroidManifest.xml
@@ -65,12 +57,21 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
 ####权限配置：
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+	<uses-permissionandroid:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS">
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
 
 如下面所示:
 
@@ -179,6 +180,64 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
         </activity>
         <service android:name="safiap.framework.logreport.monitor.handler.LogreportHandler" android:process=":remote"/>
        	<!-- android:process="safiap.framework.safframeworkmanager" end -->
+		<!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <!-- alipay sdk end -->
+        
+        <activity android:name="com.fn.paysdk.FNPaySMSActivity"
+             android:screenOrientation="portrait"
+             
+             android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="com.fn.paysdk.ChooseActivity"
+             android:screenOrientation="portrait"
+             
+             android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="com.fn.paysdk.PaySuccessActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="com.fn.paysdk.PayFailedActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="com.fn.paysdk.FNNotifActivity"></activity>
+        <activity android:name="com.fn.paysdk.FNWoActivity"></activity>
+        <service android:name="com.fn.paysdk.service.FNService"></service>
+        
+         <activity
+	android:name="com.unicom.woopensmspayment.UnicomWoOpenPaymentMainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.unicom.woopensmspayment.UnicomSMSSuccessActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.unicom.woopensmspayment.UnicomSMSFaildActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.unicom.woopensmspayment.UnicomSMSTimeOutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.unicom.woopensmspayment.RecordsConsumptionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="CHINA_UNICOM_MOBILE_CHANNEL"
+            android:value="23" />
 	</application>
     </manifest>
 1）AndroidManifest 设置（开发者必须要注意的地方）

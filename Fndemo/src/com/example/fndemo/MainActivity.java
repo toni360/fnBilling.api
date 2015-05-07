@@ -3,22 +3,26 @@ package com.example.fndemo;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-
-import com.fn.paysdk.FNPayListener;
-import com.fn.paysdk.FNPayManager;
-
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+import android.net.Uri;
+import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.fn.paysdk.FNPayListener;
+import com.fn.paysdk.FNPayManager;
+import com.fn.paysdk.service.FNService;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -31,9 +35,36 @@ public class MainActivity extends Activity implements OnClickListener {
 		manager=FNPayManager.getInstance();
 		Button init=(Button) findViewById(R.id.button1);
 		Button order=(Button) findViewById(R.id.button2);
+		Button bt3=(Button) findViewById(R.id.button3);
+		Button bt4=(Button) findViewById(R.id.button4);
+		Button bt5=(Button) findViewById(R.id.button5);
+		Button bt6=(Button) findViewById(R.id.button6);
+		Button bt7=(Button) findViewById(R.id.button7);
+		Button bt8=(Button) findViewById(R.id.button8);
+		Button bt9=(Button) findViewById(R.id.button9);
+		Button bt10=(Button) findViewById(R.id.button10);
+		Button bt11=(Button) findViewById(R.id.button11);
+		Button bt12=(Button) findViewById(R.id.button12);
+		Button bt13=(Button) findViewById(R.id.button13);
+		Button bt14=(Button) findViewById(R.id.button14);
+		Button bt15=(Button) findViewById(R.id.button15);
+		
 		init.setOnClickListener(this);
 		order.setOnClickListener(this);
-		System.out.println(getKeyHash(this));
+		bt3.setOnClickListener(this);
+		bt4.setOnClickListener(this);
+		bt5.setOnClickListener(this);
+		bt6.setOnClickListener(this);
+		bt7.setOnClickListener(this);
+		bt8.setOnClickListener(this);
+		bt9.setOnClickListener(this);
+		bt10.setOnClickListener(this);
+		bt11.setOnClickListener(this);
+		bt12.setOnClickListener(this);
+		bt13.setOnClickListener(this);
+		bt14.setOnClickListener(this);
+		bt15.setOnClickListener(this);
+//		System.out.println(getKeyHash(this));
 	}
 
 	@Override
@@ -48,30 +79,385 @@ public class MainActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.button1:
-			manager.init(this, "G510001", "014e7718ca59d4e4fea246ffb4f868b3");
+			manager.init(this, "G510001", "cde9c152ccc6717af8a03c8bc96e6d5c");
 			break;
 	
 		case R.id.button2:
-			manager.CreateOrder( this,"G510001", "014e7718ca59d4e4fea246ffb4f868b3", "1", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener() {
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "1", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
 						@Override
 						public void OnSuccess(String errcode, String errmsg) {
 							// TODO Auto-generated method stub
-							Toast.makeText(MainActivity.this,errmsg, 1).show();
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
 						}
 						
 						@Override
 						public void OnFailed(String errcode, String errmsg) {
 							// TODO Auto-generated method stub
-							Toast.makeText(MainActivity.this,errmsg, 1).show();
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
 						}
 					});
+	 
+			break;
+		case R.id.button3:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "2", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button4:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "3", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button5:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "4", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button6:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "5", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button7:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "6", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button8:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "7", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button9:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "100", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button10:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "200", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button11:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "300", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button12:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "400", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button13:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "500", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button14:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "1000", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
+			break;
+		case R.id.button15:
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "5000", 
+					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+//			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
+//					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+						
+						@Override
+						public void OnSuccess(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "³É¹¦");
+						}
+						
+						@Override
+						public void OnFailed(String errcode, String errmsg) {
+							// TODO Auto-generated method stub
+							Toast.makeText(MainActivity.this,errmsg, 0).show();
+							Log.d(errcode, "Ê§°Ü");
+						}
+					});
+//			  if(GameInterface.getActivateFlag("001")){
+//		            Toast.makeText(MainActivity.this, "001 ÒÑ¹ºÂò¹ý", Toast.LENGTH_SHORT).show();
+//		            return;
+//		          }
+//		          GameInterface.doBilling(MainActivity.this, true, false, "001", null, payCallback);
+	 
 			break;
 		}
 	}
 	
 	/**
+	 * 
 	 * »ñÈ¡Ó¦ÓÃÇ©ÃûÐÅÏ¢
 	 * @param context
 	 * @return
@@ -98,4 +484,17 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onDestroy();
 		manager.onDestroy();
 	}
+//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//		// TODO Auto-generated method stub
+//		super.onActivityResult(requestCode, resultCode, data);
+//		if (requestCode == ResourceTool.SDK_DATA_REQ) {
+//			if (data.getIntExtra("result", 1) == 0) {// Ö§¸¶³É¹¦
+//				Toast.makeText(this, "success", 1).show();
+//			} else {
+//				data.getStringExtra("errorstr");// Ö§¸¶Ê§°Ü
+//				Toast.makeText(this, data.getStringExtra("errorstr"), 1).show();
+//			}
+//		}
+//	}
+
 }
