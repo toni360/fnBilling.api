@@ -257,6 +257,11 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
        <category android:name="android.intent.category.DEFAULT" />
 	</intent-filter>
 
+###4.导入蜂鸟计费SDK所需资源包文件
+	请把demo工程里的drawable目录下的文件复制到你开发的工程目录里的res/drawable目录
+	请把demo工程里的drawable-hdpi目录下的文件复制到你开发的工程目录里的res/drawable-hdpi目录
+	请把demo工程里的values目录下的文件复制到你开发的工程目录里的res/values目录
+	如果values文件中的配置文件已经存在，请把demo文件中的内容copy到你的工程对应的文件中
 
 ##第二步：服务端计费成功通知接口
 
