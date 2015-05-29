@@ -1,22 +1,55 @@
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:
+###蜂鸟计费开放平台第二版（全新）
 
-```
-$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-```
+fnBilling+ 是蜂鸟娱乐公司为Android移动应用量身打造的下一代移动计费开放平台，通过一个 SDK 便可以同时接入多种运营商和支付宝等主流移动过计费渠道，国内唯一的全计费服务提供商。
 
-If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
+**运营商SDK渠道**
 
-### Designer Templates
-We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.
+支持中国移动、中国联通、中国电信三大运营商计费渠道，包括移动MM计费、咪咕计费、沃+计费、爱游戏计费渠道。允许使用自己的运营商SDK渠道，也可以使用蜂鸟娱乐公司提供的运营商SDK渠道。
 
-### Rather Drive Stick?
-If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
 
-### Authors and Contributors
-You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
+**运营商短代渠道**
 
-### Support or Contact
-Having trouble with Pages? Check out the documentation at https://help.github.com/pages or contact support@github.com and we’ll help you sort it out.
+支持中国移动全网短代和广东省移动短代。
+
+
+**支付宝大额计费**
+
+支持采用支付宝对大额游戏道具进行支付。
+
+
+**智能计费引擎**
+
+1）蜂鸟娱乐公司技术团队近十年经验打造；
+
+2）**热切换**：当某个计费渠道发生意外时，可以自动的无缝切换到其他合适的计费渠道，保证高转化率；
+
+3）**精确优先**：智能判断用户特征，优先采用合适的计费渠道；
+
+4）**自定义**：您可以后台自定义计费策略，你的地盘你做主；
+
+
+**智能分析引擎**
+
+1）转化率分析，精确告诉你每小时的转化率变化情况，以及趋势分析；
+
+2）用户活跃度分析，精确告诉你每小时用户活跃频率情况；
+
+3）网络连接状况分析，分析应用连接网络成功率情况；
+
+
+**高效的清结算**
+
+我们提供实时清结算，以及运营商对账报表，可以有更多时间喝咖啡。
+
+
+###联系我们
+
+为了更好地为开发者服务，请申请加入QQ群：323866153，为了避免拒绝加入，请申请时填写上：计费SDK，姓名@公司名称。
+
+
+###开发者指南
+
+开发的同学请直接访问：[https://github.com/toni360/fnBilling.api](https://github.com/toni360/fnBilling.api)
+
+可以直接fork REPO，按照开发指南文档进行开发。
+
