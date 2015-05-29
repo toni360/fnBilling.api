@@ -22,7 +22,7 @@ public final class R {
     }
     public static final class drawable {
         public static final int bd_wallet_action_bar_back_pressed=0x7f020000;
-        public static final int bird=0x7f020001;
+        public static final int bosheng=0x7f020001;
         public static final int ebpay_indicator_arrow=0x7f020002;
         public static final int gc_anim_title=0x7f020003;
         public static final int gc_arrow_big=0x7f020004;

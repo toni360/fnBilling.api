@@ -4,25 +4,27 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import android.app.Activity;
-import android.content.ContentResolver;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat.InboxStyle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.fn.paysdk.FNPayListener;
 import com.fn.paysdk.FNPayManager;
-import com.fn.paysdk.service.FNService;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -80,6 +82,27 @@ public class MainActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.button1:
 			manager.init(this, "G510001", "cde9c152ccc6717af8a03c8bc96e6d5c");
+//			 WebView webView=new WebView(this);
+//			    
+//		    
+//		    	 webView.getSettings().setSupportZoom(false);
+//
+//		     webView.getSettings().setJavaScriptEnabled(true);
+//
+//				
+//		     webView.setWebViewClient(new WebViewClient()
+//		     {
+//		            @Override
+//		            public boolean shouldOverrideUrlLoading(WebView view, String url)
+//		            {
+//		   
+//		              view.loadUrl("http://www.baidu.com"); // 在当前的webview中跳转到新的url
+//		   
+//		              return true;
+//		            }
+//		      });
+//		     webView.loadUrl("http://www.baidu.com");
+//		     setContentView(webView);
 			break;
 	
 		case R.id.button2:
@@ -427,7 +450,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 
 			break;
 		case R.id.button15:
-			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "5000", 
+			manager.CreateOrder( this,"G510001", "cde9c152ccc6717af8a03c8bc96e6d5c", "30000", 
 					"蜂鸟","蜂鸟","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"蜂鸟","蜂鸟","ok", new FNPayListener(){
