@@ -40,7 +40,7 @@ listener|是|回调接口,通过此接口通知开发者支付状态
 FNPayListener（returnCode, returnObject）：SDK订购结果监听器，开发者可以通过该接口监听业务操作的状态：
 returnCode: 
 // 计费成功: 0;
-// 计费失败: 10001|订单处理中，请稍后购买;10002|计费未初始化错误;10003|请检查网络状态;
+// 计费失败: 10001|订单处理中，请稍后购买;10002|计费未初始化错误;10003|请检查网络状态;10004|用户取消购买
 
 **onDestroy接口**
 onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
@@ -56,7 +56,32 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
 
 ####权限配置：
 
-    <uses-permission android:name="android.permission.INTERNET" />
+     <uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.SEND_SMS" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+	<uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	<uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+
+如下面所示:
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fn.paysdk"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+ 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -72,114 +97,12 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
 	<uses-permissionandroid:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS">
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
-
-如下面所示:
-
-    <?xml version="1.0" encoding="utf-8"?>
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fn.paysdk"
-    android:versionCode="1"
-    android:versionName="1.0" >
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 
-
-		<service
-            android:name="mm.purchasesdk.iapservice.PurchaseService"
-            android:exported="true" >
-
-            <!-- android:process="mm.iapServices" > -->
-            <intent-filter android:priority="312" >
-                <action android:name="com.aspire.purchaseservice.BIND" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter android:priority="312" >
-                <action android:name="你的包名.purchaseservice.BIND" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
-            <intent-filter android:priority="312" >
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.SAFIAP.COMPONENT" >
-                </category>
-            </intent-filter>
-        </service>
-        <!-- android:excludeFromRecents="true" -->
-        <!-- android:launchMode="singleInstance" -->
-        <activity
-            android:name="mm.purchasesdk.iapservice.BillingLayoutActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:theme="@android:style/Theme.Translucent">
-            <intent-filter android:priority="312" >
-                <action android:name="你的包名.com.mmiap.activity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <!-- android:process="safiap.framework.safframeworkmanager" begin -->
-        <service
-            android:name="safiap.framework.SafFrameworkManager"
-            android:exported="true"
-            android:process="safiap.framework" >
-            <intent-filter android:priority="632" >
-
-            <!-- ID for services declared in AIDL -->
-        		<action android:name="safiap.framework.sdk.ISAFFramework" />
-            </intent-filter>
-            <intent-filter android:priority="632" >
-                <!-- ID for services declared in AIDL -->
-                <action android:name="safiap.framework.ACTION_START_DOWNLOAD" />
-        	</intent-filter>
-        	<intent-filter android:priority="632" >
-                <!-- ID for services declared in AIDL -->
-                <action android:name="safiap.framework.ACTION_CHECK_UPDATE" />
-            </intent-filter>
-        </service>
-        <!-- receivers -->
-        <receiver android:name="safiap.framework.CheckUpdateReceiver" >
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_CANCEL_NOTIFICATION" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.GET_SHARED_DATA" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_SET_TIMER" />
-            </intent-filter>
-        </receiver>
-        <activity
-            android:name="safiap.framework.ui.UpdateHintActivity" 
-            android:launchMode="singleInstance"
-            android:excludeFromRecents="true"
-            android:configChanges="orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar">
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_TO_INSTALL" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_TO_INSTALL_IAP" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_NETWORK_ERROR_IAP" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="safiap.framework.ACTION_NETWORK_ERROR_FRAMEWORK" />
-            </intent-filter>
-        </activity>
-        <service android:name="safiap.framework.logreport.monitor.handler.LogreportHandler" android:process=":remote"/>
-       	<!-- android:process="safiap.framework.safframeworkmanager" end -->
+		<!-- fnpay sdk begin -->
 		<!-- alipay sdk begin -->
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
@@ -204,64 +127,21 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
         <activity android:name="com.fn.paysdk.PayFailedActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Dialog"></activity>
+  		<activity android:name="com.fn.paysdk.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog"></activity>
         <activity android:name="com.fn.paysdk.FNNotifActivity"></activity>
         <activity android:name="com.fn.paysdk.FNWoActivity"></activity>
         <service android:name="com.fn.paysdk.service.FNService"></service>
-        
-         <activity
-	android:name="com.unicom.woopensmspayment.UnicomWoOpenPaymentMainActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" >
-        </activity>
-        <activity
-            android:name="com.unicom.woopensmspayment.UnicomSMSSuccessActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.unicom.woopensmspayment.UnicomSMSFaildActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.unicom.woopensmspayment.UnicomSMSTimeOutActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.unicom.woopensmspayment.RecordsConsumptionActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
 
-        <meta-data
-            android:name="CHINA_UNICOM_MOBILE_CHANNEL"
-            android:value="23" />
+        <!-- fnpay sdk end -->
 	</application>
     </manifest>
-1）AndroidManifest 设置（开发者必须要注意的地方）
-	在上述声明中，需要注意声明BillingLayoutActivity中的Action
-	<activity            android:name="mm.purchasesdk.iapservice.BillingLayoutActivity"
-            android:configChanges="orientation|keyboardHidden"
-            android:theme="@android:style/Theme.Translucent">
-	<intent-filter android:priority="313" >
-	<action android:name="你程序的包名.com.mmiap.activity" />
-	<category android:name="android.intent.category.DEFAULT" />
-	</intent-filter>
-	</activity>
-	请将action声明为您程序的包名.com.mmiap.activity
-	在上述声明中，需要注意声明PurchaseService中的Action
-	<intent-filter android:priority="313" >
-       <action android:name="你程序的包名.purchaseservice.BIND" />
-       <category android:name="android.intent.category.DEFAULT" />
-	</intent-filter>
+
 
 ###4.导入蜂鸟计费SDK所需资源包文件
 	请把demo工程里的drawable目录下的文件复制到你开发的工程目录里的res/drawable目录
-	请把demo工程里的drawable-hdpi目录下的文件复制到你开发的工程目录里的res/drawable-hdpi目录
-	请把demo工程里的values目录下的文件复制到你开发的工程目录里的res/values目录
-	如果values文件中的配置文件已经存在，请把demo文件中的内容copy到你的工程对应的文件中
+	
 
 ##第二步：服务端计费成功通知接口
 
