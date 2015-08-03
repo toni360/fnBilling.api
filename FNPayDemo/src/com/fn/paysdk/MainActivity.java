@@ -81,12 +81,15 @@ public class MainActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.button1:
 			manager.init(this, "G510001", "8795d5a792771fb2eee48401eee655b0");
+//			Intent i=new Intent(this,RegisterActivity.class);
+//			i.putExtra("msg", "ÄúµÄĞÅÓÃ¶î¶È²»¹»À²¹ş¹ş¹ş");
+//			startActivity(i);
 			break;
 	
 		case R.id.button2:
 			
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "1", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"ĞÂÊÖÀñ°ü","·äÄñ","ok", new FNPayListener(){
 						
 						@Override
 						public void OnSuccess(String errcode, String errmsg) {
@@ -106,7 +109,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button3:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "2", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"²¶»ñÃÀÈËÓãÀñ°ü","·äÄñ","ok", new FNPayListener(){
 				
 						@Override
 						public void OnSuccess(String errcode, String errmsg) {
@@ -125,7 +128,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button4:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "3", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"²¶»ñöèÓãÀñ°ü","·äÄñ","ok", new FNPayListener(){
 
 						@Override
 						public void OnSuccess(String errcode, String errmsg) {
@@ -145,7 +148,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button5:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "4", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"Éı¼¶Àñ°ü","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -172,7 +175,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button6:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "5", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"ÈÎÎñÍê³ÉÀñ°ü","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -199,7 +202,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button7:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "6", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"¹ºÂò½ğ±Ò1","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -226,7 +229,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button8:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "7", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"¹ºÂò¸ß±¬Õ¨µ¯","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -253,7 +256,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button9:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "100", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"¹ºÂò½ğ±Ò2","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -280,7 +283,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button10:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "200", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"¹ºÂò½ğ±Ò3","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -307,7 +310,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button11:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "300", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"¿ªÆôĞÂÓæ³¡","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -334,7 +337,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button12:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "400", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"¿ªÆôÇ©µ½vip","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						
@@ -361,7 +364,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.button13:
 			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "500", 
-					"·äÄñ","·äÄñ","ok", new FNPayListener(){
+					"×ªÅÌ´óÀñ°ü","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 						

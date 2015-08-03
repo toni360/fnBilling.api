@@ -52,8 +52,8 @@
         
         <activity android:name="com.fn.paysdk.FNPaySMSActivity"
              android:screenOrientation="portrait"
-             
-             android:theme="@android:style/Theme.Dialog"></activity>
+              android:theme="@android:style/Theme.Dialog"
+            ></activity>
         <activity android:name="com.fn.paysdk.ChooseActivity"
              android:screenOrientation="portrait"
              

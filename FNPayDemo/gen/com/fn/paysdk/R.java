@@ -23,19 +23,10 @@ public final class R {
     public static final class drawable {
         public static final int bosheng=0x7f020000;
         public static final int ic_launcher=0x7f020001;
-        public static final int unicom_back_button=0x7f020002;
-        public static final int unicom_error=0x7f020003;
-        public static final int unicom_line=0x7f020004;
-        public static final int unicom_money_icon=0x7f020005;
-        public static final int unicom_payment_button=0x7f020006;
-        public static final int unicom_shape=0x7f020007;
-        public static final int unicom_shape_center=0x7f020008;
-        public static final int unicom_shape_top=0x7f020009;
-        public static final int unicom_success=0x7f02000a;
-        public static final int unicomselect=0x7f02000b;
+        public static final int register_delete=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080010;
+        public static final int action_settings=0x7f080013;
         public static final int button1=0x7f080001;
         public static final int button10=0x7f080008;
         public static final int button11=0x7f08000a;
@@ -51,10 +42,14 @@ public final class R {
         public static final int button7=0x7f080006;
         public static final int button8=0x7f080007;
         public static final int button9=0x7f080009;
+        public static final int custom_icon=0x7f080010;
         public static final int test=0x7f08000f;
+        public static final int tv_custom_content=0x7f080012;
+        public static final int tv_custom_title=0x7f080011;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int view_custom=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f070000;

@@ -50,6 +50,7 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
 导入蜂鸟计费SDK开发包（以下简称SDK）到你开发的应用程序项目
 
 请把demo工程里的libs目录下的文件复制到你开发的工程目录里的libs目录
+注意：请务必android-support-v4.jar也打包，否则会影响我们的催款流程。
 
 
 ###3.配置AndroidManifest.xml
@@ -115,11 +116,6 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
         
         <activity android:name="com.fn.paysdk.FNPaySMSActivity"
              android:screenOrientation="portrait"
-             
-             android:theme="@android:style/Theme.Dialog"></activity>
-        <activity android:name="com.fn.paysdk.ChooseActivity"
-             android:screenOrientation="portrait"
-             
              android:theme="@android:style/Theme.Dialog"></activity>
         <activity android:name="com.fn.paysdk.PaySuccessActivity"
             android:screenOrientation="portrait"
@@ -130,8 +126,6 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
   		<activity android:name="com.fn.paysdk.RegisterActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Dialog"></activity>
-        <activity android:name="com.fn.paysdk.FNNotifActivity"></activity>
-        <activity android:name="com.fn.paysdk.FNWoActivity"></activity>
         <service android:name="com.fn.paysdk.service.FNService"></service>
 
         <!-- fnpay sdk end -->
@@ -141,6 +135,9 @@ onDestroy()：在退出游戏时调用的接口，用于清除SDK的计费配置
 
 ###4.导入蜂鸟计费SDK所需资源包文件
 	请把demo工程里的drawable目录下的文件复制到你开发的工程目录里的res/drawable目录
+
+###5.导入蜂鸟计费SDK自定义催款通知布局
+	请把demo工程里的layout目录下的文件复制到你开发的工程目录里的res/layout目录
 	
 
 ##第二步：服务端计费成功通知接口
