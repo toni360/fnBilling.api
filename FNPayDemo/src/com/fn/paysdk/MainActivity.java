@@ -417,7 +417,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	 
 			break;
 		case R.id.button15:
-			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "30000", 
+			manager.CreateOrder( this,"G510001", "8795d5a792771fb2eee48401eee655b0", "3000", 
 					"·äÄñ","·äÄñ","ok", new FNPayListener(){
 //			manager.CreateOrder( this,"GM01001", "3dcad221a7a81c688efb6ec3b4eb626b", "1000", 
 //					"·äÄñ","·äÄñ","ok", new FNPayListener(){
